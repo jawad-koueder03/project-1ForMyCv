@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import TrafficChatApp from "./TrafficChatApp";
+import TrafficDashboard from "./TrafficDashboard";
+import ReportsPage from "./ReportsPage";
+import { Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import LoginPage from "./LoginPage";
+import NavBar from "./NavBar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+    <main>
+      <Routes>
+        <Route path="/" element={<LoginPage></LoginPage>} />
+        <Route
+          path="/traficChatApp"
+          element={<TrafficChatApp></TrafficChatApp>}
+        />
+        <Route path="/TrafficDashboard" element={<TrafficDashboard></TrafficDashboard>} />
+        <Route path="/ReportsPage" element={<ReportsPage></ReportsPage>} />
+      </Routes>
+      </main>
+    </>
   );
 }
 
